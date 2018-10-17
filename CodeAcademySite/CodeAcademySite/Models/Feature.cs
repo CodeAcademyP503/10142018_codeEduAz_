@@ -15,7 +15,7 @@ namespace CodeAcademySite.Models
     public partial class Feature
     {
         public int Id { get; set; }
-        public string Imagepath { get; set; }
         public string Info { get; set; }
+        public string ImagePath { get; set; }
     }
 }

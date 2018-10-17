@@ -31,7 +31,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Header" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Imagepath" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Info" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
@@ -40,8 +39,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Imagepath" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Info" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Footers">
           <Key>
@@ -142,7 +141,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
@@ -151,8 +149,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Footer">
           <Key>
@@ -256,7 +254,6 @@
             <EntityTypeMapping TypeName="CodeAcademyDbModel.EducationProgramm">
               <MappingFragment StoreEntitySet="EducationProgramms">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Header" ColumnName="Header" />
                 <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
                 <ScalarProperty Name="Info" ColumnName="Info" />
               </MappingFragment>
@@ -265,8 +262,8 @@
           <EntitySetMapping Name="Features">
             <EntityTypeMapping TypeName="CodeAcademyDbModel.Feature">
               <MappingFragment StoreEntitySet="Features">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
                 <ScalarProperty Name="Info" ColumnName="Info" />
               </MappingFragment>
             </EntityTypeMapping>

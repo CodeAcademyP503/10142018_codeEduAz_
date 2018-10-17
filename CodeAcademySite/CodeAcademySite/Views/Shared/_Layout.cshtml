@@ -1,5 +1,4 @@
 ﻿@using CodeAcademySite.Models
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,16 +38,16 @@
 
 </head>
 <body>
-  
+
     <header>
         <div class="top"></div>
         <div class="info">
             <div class="wrapper">
+
                 @foreach (TopNavbar item in ViewBag.topNavbars)
                 {
                     <h4>@item.Info</h4>
                 }
-
             </div>
         </div>
         <nav>
@@ -77,27 +76,31 @@
                         </button>
                     </div>
                     <ul>
+                        @foreach (Navbar item in ViewBag.navbars)
+                        {
                         <li class='dropdown'>
                             <a class="dropdown-trigger">
-                                Akademiya
+                               @item.MenuItem
                                 <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
                             </a>
-                            <ul class="dropdown-content">
-                                <div class="dropdown-frame wo-title">
-                                    <ul>
-                                        <li><a href="/academy/haqqimizda">Haqqımızda</a></li>
-                                        <li><a href="/academy/muellimlerimiz">M&#252;əllimlərimiz</a></li>
-                                        <li><a href="/academy/akademik-partnyorlar">Akademik Partnyorlar</a></li>
-                                    </ul>
-                                </div>
-                            </ul>
+                            @*<ul class="dropdown-content">
+            <div class="dropdown-frame wo-title">
+                <ul>
+                    <li><a href="/academy/haqqimizda">Haqqımızda</a></li>
+                    <li><a href="/academy/muellimlerimiz">M&#252;əllimlərimiz</a></li>
+                    <li><a href="/academy/akademik-partnyorlar">Akademik Partnyorlar</a></li>
+                </ul>
+            </div>
+        </ul>*@
                         </li>
-                        <li class='dropdown'>
+                        }
+                        
+                        @*<li class='dropdown'>
                             <a class="dropdown-trigger">
                                 Təhsil
                                 <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
                             </a>
-                            <ul class="dropdown-content">
+                            @*<ul class="dropdown-content">
                                 <div class="dropdown-frame">
                                     <div class="heading dropdown-trigger">
                                         <a>
@@ -128,12 +131,12 @@
                                         <li><a href="/education/karyera-merkezi">Karyera mərkəzi</a></li>
                                     </ul>
                                 </div>
-                            </ul>
-                        </li>
-                        <li><a href="/mezunlar">Məzunlar</a></li>
-                        <li><a href="/news">Yeniliklər</a></li>
-                        <li><a href="/contact">Əlaqə</a></li>
-                        <li class='dropdown mobile-active'>
+                            </ul>*@
+                        @*</li>
+                        <li><a href="#">Məzunlar</a></li>
+                        <li><a href="#">Yeniliklər</a></li>
+                        <li><a href="#">Əlaqə</a></li>*@
+                        @*<li class='dropdown mobile-active'>
                             <a class="dropdown-trigger">
                                 Təqvim
                                 <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
@@ -162,7 +165,7 @@
                                     </ul>
                                 </div>
                             </ul>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
                 <div class="search-bar align-right">

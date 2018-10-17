@@ -218,38 +218,41 @@
     <Content Include="Images\ajax-loader.gif" />
     <Content Include="Images\autodesk-partner.png" />
     <Content Include="Images\close_popup.png" />
-    <Content Include="Images\Content\00f33c4a-df4b-4321-8ebc-38637f8606dd_telman-akhundoff.jpg" />
-    <Content Include="Images\Content\149ace1f-0ef8-4aa6-827a-14ea7a21f86c_qarib_mehdiyev.jpg" />
-    <Content Include="Images\Content\24a34673-7146-4088-a0c0-0e49ab182cf0_sheyda-allahverdiyeva.jpg" />
-    <Content Include="Images\Content\2910fb51-e98e-47f8-be5e-0f94ec7ae47d_murad_sofiyev.jpg" />
-    <Content Include="Images\Content\2c99fe59-555a-42b9-9ca2-eb8dff8340fa_zaur-ismayilov-ulvi-aslanov-sazis-imzalama706.jpg" />
-    <Content Include="Images\Content\38feaa84-59f0-499a-ad9c-786631e3495a_emin-akhundov.jpg" />
-    <Content Include="Images\Content\6e002839-dc35-420e-9cc3-0a260b801843_chingiz-safaroff.jpg" />
-    <Content Include="Images\Content\6eaa88c4-1208-4c96-aad9-5e743594e43e__SLO9449 copy.jpg" />
-    <Content Include="Images\Content\779bbd4d-459c-45ba-9181-3e4fc0fcaa50_uxalive1706.jpg" />
-    <Content Include="Images\Content\817779d0-bb31-4c90-b9fa-f1123c045313_karyera_yarimarkasi.jpg" />
-    <Content Include="Images\Content\87f4231a-1b24-4d07-8285-28ff34b4c247_xumar_musayeva.jpg" />
-    <Content Include="Images\Content\aab9f388-4d26-4ee9-975a-34f7af3c9c9e_mammad-karim.jpg" />
-    <Content Include="Images\Content\ac20b00b-1667-46a7-9c5c-cb39009a853a_jeykhun-imanov.jpg" />
-    <Content Include="Images\Content\c146a959-2daa-4f55-8054-5ef0ed669cbb_yusif-qasimov.jpg" />
-    <Content Include="Images\Content\c3d7228d-e56b-4111-9cb9-c1473baef00a_parviz-alizade.jpg" />
-    <Content Include="Images\Content\ce84414e-19d9-4506-be28-081821f4e59d_xmen706.jpg" />
-    <Content Include="Images\Content\e1a88781-c4b8-4d8c-ac72-377e6c66a0f0_shahin-isayev.jpg" />
-    <Content Include="Images\Content\f221d4e8-6da4-431b-8b0b-01e5f499fa83_jalal-rahimov.jpg" />
+    <Content Include="Images\00f33c4a-df4b-4321-8ebc-38637f8606dd_telman-akhundoff.jpg" />
+    <Content Include="Images\149ace1f-0ef8-4aa6-827a-14ea7a21f86c_qarib_mehdiyev.jpg" />
+    <Content Include="Images\24a34673-7146-4088-a0c0-0e49ab182cf0_sheyda-allahverdiyeva.jpg" />
+    <Content Include="Images\2910fb51-e98e-47f8-be5e-0f94ec7ae47d_murad_sofiyev.jpg" />
+    <Content Include="Images\2c99fe59-555a-42b9-9ca2-eb8dff8340fa_zaur-ismayilov-ulvi-aslanov-sazis-imzalama706.jpg" />
+    <Content Include="Images\38feaa84-59f0-499a-ad9c-786631e3495a_emin-akhundov.jpg" />
+    <Content Include="Images\6e002839-dc35-420e-9cc3-0a260b801843_chingiz-safaroff.jpg" />
+    <Content Include="Images\6eaa88c4-1208-4c96-aad9-5e743594e43e__SLO9449 copy.jpg" />
+    <Content Include="Images\779bbd4d-459c-45ba-9181-3e4fc0fcaa50_uxalive1706.jpg" />
+    <Content Include="Images\817779d0-bb31-4c90-b9fa-f1123c045313_karyera_yarimarkasi.jpg" />
+    <Content Include="Images\87f4231a-1b24-4d07-8285-28ff34b4c247_xumar_musayeva.jpg" />
+    <Content Include="Images\aab9f388-4d26-4ee9-975a-34f7af3c9c9e_mammad-karim.jpg" />
+    <Content Include="Images\ac20b00b-1667-46a7-9c5c-cb39009a853a_jeykhun-imanov.jpg" />
+    <Content Include="Images\c146a959-2daa-4f55-8054-5ef0ed669cbb_yusif-qasimov.jpg" />
+    <Content Include="Images\c3d7228d-e56b-4111-9cb9-c1473baef00a_parviz-alizade.jpg" />
+    <Content Include="Images\ce84414e-19d9-4506-be28-081821f4e59d_xmen706.jpg" />
+    <Content Include="Images\e1a88781-c4b8-4d8c-ac72-377e6c66a0f0_shahin-isayev.jpg" />
+    <Content Include="Images\f221d4e8-6da4-431b-8b0b-01e5f499fa83_jalal-rahimov.jpg" />
     <Content Include="Images\dmi-partner.png" />
-    <Content Include="Images\icons\3d_modelling.png" />
-    <Content Include="Images\icons\digital_media.png" />
-    <Content Include="Images\icons\linear.png" />
-    <Content Include="Images\icons\linear_left.png" />
-    <Content Include="Images\icons\ms_office.png" />
-    <Content Include="Images\icons\programming.png" />
-    <Content Include="Images\icons\system_administration.png" />
-    <Content Include="Images\icons\web_graphics.png" />
+    <Content Include="Images\3d_modelling.png" />
+    <Content Include="Images\digital_media.png" />
+    <Content Include="Images\linear.png" />
+    <Content Include="Images\linear_left.png" />
+    <Content Include="Images\ms_office.png" />
+    <Content Include="Images\programming.png" />
+    <Content Include="Images\system_administration.png" />
+    <Content Include="Images\web_graphics.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\microsoft-partner.png" />
     <Content Include="Images\popup_bg.png" />
     <Content Include="Images\popup_bg_mobile.png" />
     <Content Include="Images\student.png" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Models\CodeAcademy.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CodeAcademy.edmx</DependentUpon>
@@ -259,16 +262,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CodeAcademy.edmx</DependentUpon>
       <LastGenOutput>CodeAcademy.cs</LastGenOutput>
-    </Content>
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\CodeAcademy.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CodeAcademy.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\CodeAcademy.edmx.diagram">
-      <DependentUpon>CodeAcademy.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\vendor.js" />
@@ -284,8 +277,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,7 +284,16 @@
   <ItemGroup>
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\slick.woff" />
+    <EntityDeploy Include="Models\CodeAcademy.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CodeAcademy.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CodeAcademy.edmx.diagram">
+      <DependentUpon>CodeAcademy.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

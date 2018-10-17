@@ -15,7 +15,6 @@ namespace CodeAcademySite.Models
     public partial class EducationProgramm
     {
         public int Id { get; set; }
-        public string Header { get; set; }
         public string Imagepath { get; set; }
         public string Info { get; set; }
     }
