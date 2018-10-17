@@ -1,0 +1,259 @@
+﻿@using CodeAcademySite.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    ' https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KBW76DW');</script>
+
+
+
+
+    <!-- End Google Tag Manager -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <title>Ana Sehife</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+
+    <link href="~/Content/vendor.css" rel="stylesheet" />
+
+    <link href="~/fonts/fonts.css" rel="stylesheet" />
+
+    <link href="~/Content/main.css" rel="stylesheet" />
+
+</head>
+<body>
+  
+    <header>
+        <div class="top"></div>
+        <div class="info">
+            <div class="wrapper">
+                @foreach (TopNavbar item in ViewBag.topNavbars)
+                {
+                    <h4>@item.Info</h4>
+                }
+
+            </div>
+        </div>
+        <nav>
+            <div class="wrapper flexbox middle">
+                <button class="hamburger hamburger--collapse " type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <div class="brand-logo">
+                    <a href="/"><img src="~/Images/logo.png" alt="Code Academy"></a>
+                </div>
+                <div class="menu">
+                    <div class="search-form mobile flexbox">
+                        <form id="form-search-mobile" action="/search" method="GET" autocomplete="off">
+                            <input type="text" name="key" placeholder="Saytda axtar">
+                            <input type="hidden" name="filter" value="all" />
+                            <button type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                        <button class="hamburger close hamburger--collapse is-active" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                    <ul>
+                        <li class='dropdown'>
+                            <a class="dropdown-trigger">
+                                Akademiya
+                                <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-content">
+                                <div class="dropdown-frame wo-title">
+                                    <ul>
+                                        <li><a href="/academy/haqqimizda">Haqqımızda</a></li>
+                                        <li><a href="/academy/muellimlerimiz">M&#252;əllimlərimiz</a></li>
+                                        <li><a href="/academy/akademik-partnyorlar">Akademik Partnyorlar</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class='dropdown'>
+                            <a class="dropdown-trigger">
+                                Təhsil
+                                <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-content">
+                                <div class="dropdown-frame">
+                                    <div class="heading dropdown-trigger">
+                                        <a>
+                                            DƏRSLƏR
+                                            <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/education/qrafik-ve-veb-dizayn">Qrafik və Veb Dizayn</a></li>
+                                        <li><a href="/education/digital-marketing">Digital Marketing</a></li>
+                                        <li><a href="/education/proqramlasdirma">Proqramlaşdırma</a></li>
+                                        <li><a href="/education/sistem-administratorlugu">Sistem  Administratorluğu</a></li>
+                                        <li><a href="/education/ms-office">MS Office</a></li>
+                                        <li><a href="/education/3d-modellesdirme-ve-vizualizasiya">3D Modelləşdirmə və Vizualizasiya</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown-frame">
+                                    <div class="heading dropdown-trigger">
+                                        TƏHSİL MODELİ
+                                        <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/education/zemanetli_tehsil">Zəmanətli təhsil</a></li>
+                                        <li><a href="/education/tehsil-modeli">Təhsil Modeli</a></li>
+                                        <li><a href="/education/mentor_sistemi">Mentor sistemi</a></li>
+                                        <li><a href="/education/beynalxalq_sertifkasiya">Beynəlxalq sertifikasiya</a></li>
+                                        <li><a href="/education/karyera-merkezi">Karyera mərkəzi</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                        <li><a href="/mezunlar">Məzunlar</a></li>
+                        <li><a href="/news">Yeniliklər</a></li>
+                        <li><a href="/contact">Əlaqə</a></li>
+                        <li class='dropdown mobile-active'>
+                            <a class="dropdown-trigger">
+                                Təqvim
+                                <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-content">
+                                <div class="dropdown-frame wo-title">
+                                    <ul>
+                                        <li><a href="/events">Bütün tədbirlər</a></li>
+                                        <li><a href="/events/infosessiyalar">İnfosessiyalar</a></li>
+                                        <li><a href="/events/gizlilik_siyaseti">Gizlilik Siyasəti</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class='dropdown mobile-active'>
+                            <a class="dropdown-trigger">
+                                Müraciət et
+                                <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-content">
+                                <div class="dropdown-frame wo-title">
+                                    <ul>
+                                        <li><a href="/appeal/muraciet">M&#252;raciət</a></li>
+                                        <li><a href="/appeal/sualim_var">Sualım var</a></li>
+                                        <li><a href="/appeal/mene_zeng_edin">Mənə zəng edin</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-bar align-right">
+                    <form id="form-search" action="/search" method="GET" autocomplete="off">
+                        <div class="input-wrapper">
+                            <input type="text" name="key" placeholder="Saytda axtar">
+                            <input type="hidden" name="filter" value="all" />
+                            <button type="submit" disabled>
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="apply ">
+
+                    <button onclick="window.location.href='/appeal/muraciet'" type="button" class="button-style button-blue">Müraciət et</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @RenderBody();
+
+
+    <footer>
+        <div class="wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9">
+                        <ul class="links flexbox between">
+                            <li>
+                                <h3>AKADEMİYA</h3>
+                                <ul>
+                                    <li><a href="/academy/haqqimizda">Haqqımızda</a></li>
+                                    <li><a href="/academy/idare-heyeti">İdarə Heyəti</a></li>
+                                    <li><a href="/academy/muellimlerimiz">M&#252;əllimlərimiz</a></li>
+                                    <li><a href="/academy/akademik-partnyorlar">Akademik Partnyorlar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>DƏRSLƏR</h3>
+                                <ul>
+                                    <li><a href="/education/qrafik-ve-veb-dizayn">Qrafik və Veb Dizayn</a></li>
+                                    <li><a href="/education/digital-marketing">Digital Marketing</a></li>
+                                    <li><a href="/education/proqramlasdirma">Proqramlaşdırma</a></li>
+                                    <li><a href="/education/sistem-administratorlugu">Sistem  Administratorluğu</a></li>
+                                    <li><a href="/education/ms-office">MS Office</a></li>
+                                    <li><a href="/education/3d-modellesdirme-ve-vizualizasiya">3D Modelləşdirmə və Vizualizasiya</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>TƏHSİL MODELİ</h3>
+                                <ul>
+                                    <li><a href="/education/zemanetli_tehsil">Zəmanətli təhsil</a></li>
+                                    <li><a href="/education/tehsil-modeli">Təhsil Modeli</a></li>
+                                    <li><a href="/education/mentor_sistemi">Mentor sistemi</a></li>
+                                    <li><a href="/education/beynalxalq_sertifkasiya">Beynəlxalq sertifikasiya</a></li>
+                                    <li><a href="/education/karyera-merkezi">Karyera mərkəzi</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>TƏQVİM</h3>
+                                <ul>
+                                    <li><a href="/events/infosessiyalar">İnfosessiyalar</a></li>
+                                    <li><a href="/events/gizlilik_siyaseti">Gizlilik Siyasəti</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contact-details align-right">
+                            <h3>ƏLAQƏ</h3>
+                            <address>Nizami küçesi 203B, AF Business House, 2-ci mərtəbə</address><a href="tel:+994125552525" class="phone">Tel: +99412 555 2525</a>
+                            <p>
+                                Mobil: <a href="tel:+994504442633">+99450 444 2633</a>
+                                <br>Whatsapp: <a href="tel:+994504442633">+99450 444 2633</a>
+                            </p>
+                            <ul class="social-networks flexbox between">
+                                <li><a target="_blank" href="https://www.facebook.com/code.edu.az"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/Code_edu_az"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/code.edu.az/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/company/code.edu.az"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

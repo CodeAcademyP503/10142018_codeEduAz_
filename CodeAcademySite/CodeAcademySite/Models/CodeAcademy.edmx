@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CodeAcademyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AboutUs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Imagepath" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="WorkAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Connections">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="WhatsApp" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EducationProgramms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Imagepath" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Info" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Features">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imagepath" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Info" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Footers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Meetings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imagepath" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Navbars">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuItem" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imagepath" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sliders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imagepath" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Info" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TopNavbars">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Info" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CodeAcademyDbModelStoreContainer">
+          <EntitySet Name="AboutUs" EntityType="Self.AboutUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Connections" EntityType="Self.Connections" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EducationProgramms" EntityType="Self.EducationProgramms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Features" EntityType="Self.Features" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Footers" EntityType="Self.Footers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meetings" EntityType="Self.Meetings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Navbars" EntityType="Self.Navbars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TopNavbars" EntityType="Self.TopNavbars" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CodeAcademyDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AboutU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WorkAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Connection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WhatsApp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EducationProgramm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Footer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Meeting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Navbar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuItem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imagepath" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Info" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TopNavbar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Info" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CodeAcademyDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AboutUs" EntityType="Self.AboutU" />
+          <EntitySet Name="Connections" EntityType="Self.Connection" />
+          <EntitySet Name="EducationProgramms" EntityType="Self.EducationProgramm" />
+          <EntitySet Name="Features" EntityType="Self.Feature" />
+          <EntitySet Name="Footers" EntityType="Self.Footer" />
+          <EntitySet Name="Meetings" EntityType="Self.Meeting" />
+          <EntitySet Name="Navbars" EntityType="Self.Navbar" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="Partners" EntityType="Self.Partner" />
+          <EntitySet Name="Sliders" EntityType="Self.Slider" />
+          <EntitySet Name="TopNavbars" EntityType="Self.TopNavbar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CodeAcademyDbModelStoreContainer" CdmEntityContainer="CodeAcademyDbEntities">
+          <EntitySetMapping Name="AboutUs">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.AboutU">
+              <MappingFragment StoreEntitySet="AboutUs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Connections">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Connection">
+              <MappingFragment StoreEntitySet="Connections">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="WhatsApp" ColumnName="WhatsApp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducationProgramms">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.EducationProgramm">
+              <MappingFragment StoreEntitySet="EducationProgramms">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Features">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Feature">
+              <MappingFragment StoreEntitySet="Features">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Footers">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Footer">
+              <MappingFragment StoreEntitySet="Footers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meetings">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Meeting">
+              <MappingFragment StoreEntitySet="Meetings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Navbars">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Navbar">
+              <MappingFragment StoreEntitySet="Navbars">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MenuItem" ColumnName="MenuItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partners">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Partner">
+              <MappingFragment StoreEntitySet="Partners">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sliders">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Slider">
+              <MappingFragment StoreEntitySet="Sliders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TopNavbars">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.TopNavbar">
+              <MappingFragment StoreEntitySet="TopNavbars">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
