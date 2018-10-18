@@ -12,12 +12,12 @@ namespace CodeAcademySite.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class FooterCategory
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public string Text { get; set; }
+        public int HeaderId { get; set; }
+    
+        public virtual FooterHeader FooterHeader { get; set; }
     }
 }

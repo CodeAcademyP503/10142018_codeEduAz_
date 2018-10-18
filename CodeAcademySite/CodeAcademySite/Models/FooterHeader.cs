@@ -12,12 +12,18 @@ namespace CodeAcademySite.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class FooterCategory1
+    public partial class FooterHeader
     {
-        public int id { get; set; }
-        public string Text { get; set; }
-        public int HeaderId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FooterHeader()
+        {
+            this.FooterCategories = new HashSet<FooterCategory>();
+        }
     
-        public virtual FooterHeader1 FooterHeader { get; set; }
+        public int id { get; set; }
+        public string text { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FooterCategory> FooterCategories { get; set; }
     }
 }

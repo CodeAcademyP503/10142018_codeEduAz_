@@ -186,13 +186,10 @@
     <Compile Include="Models\Feature.cs">
       <DependentUpon>CodeAcademy.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FooterCategory1.cs">
+    <Compile Include="Models\FooterCategory.cs">
       <DependentUpon>CodeAcademy.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FooterHeader1.cs">
-      <DependentUpon>CodeAcademy.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GetFooterInfo.cs">
+    <Compile Include="Models\FooterHeader.cs">
       <DependentUpon>CodeAcademy.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MeetingsContent.cs">
@@ -217,9 +214,6 @@
       <DependentUpon>CodeAcademy.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs">
-      <DependentUpon>CodeAcademy.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>CodeAcademy.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TopNavbar.cs">

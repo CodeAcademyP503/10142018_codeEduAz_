@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CodeAcademyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CodeAcademyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AboutUs">
           <Key>
             <PropertyRef Name="Id" />
@@ -130,32 +130,12 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.Students' does not have a primar
           <Property Name="Content" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="WorkAddress" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="TopNavbars">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Info" Type="nvarchar" MaxLength="500" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="GetFooterInfo">
-          <Key>
-            <PropertyRef Name="Text" />
-            <PropertyRef Name="Expr1" />
-          </Key>
-          <Property Name="Text" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="Expr1" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <Association Name="FK__footerCat__Heade__114A936A">
           <End Role="FooterHeader" Type="Self.FooterHeader" Multiplicity="1" />
@@ -183,7 +163,6 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TopNavbars" EntityType="Self.TopNavbars" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -195,18 +174,13 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
     [Students].[WorkAddress] AS [WorkAddress]
     FROM [dbo].[Students] AS [Students]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="GetFooterInfo" EntityType="Self.GetFooterInfo" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [GetFooterInfo].[Text] AS [Text], 
-    [GetFooterInfo].[Expr1] AS [Expr1]
-    FROM [dbo].[GetFooterInfo] AS [GetFooterInfo]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__footerCat__Heade__114A936A" Association="Self.FK__footerCat__Heade__114A936A">
             <End Role="FooterHeader" EntitySet="FooterHeader" />
             <End Role="FooterCategories" EntitySet="FooterCategories" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CodeAcademyDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -221,6 +195,16 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
           <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="WorkAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mob" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="EducationProgramm">
           <Key>
             <PropertyRef Name="Id" />
@@ -228,7 +212,7 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Imagepath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ClassName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ClassName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Feature">
           <Key>
@@ -236,7 +220,48 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FooterCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HeaderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FooterHeader" Relationship="Self.FK__footerCat__Heade__114A936A" FromRole="FooterCategories" ToRole="FooterHeader" />
+        </EntityType>
+        <EntityType Name="FooterHeader">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FooterCategories" Relationship="Self.FK__footerCat__Heade__114A936A" FromRole="FooterHeader" ToRole="FooterCategories" />
+        </EntityType>
+        <EntityType Name="MeetingsContent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mobile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MeetingsHeader">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstPart" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondPart" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MeetingsImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImagePath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Navbar">
           <Key>
@@ -275,29 +300,6 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Info" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="CodeAcademyDbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AboutUs" EntityType="Self.AboutU" />
-          <EntitySet Name="EducationProgramms" EntityType="Self.EducationProgramm" />
-          <EntitySet Name="Features" EntityType="Self.Feature" />
-          <EntitySet Name="Navbars" EntityType="Self.Navbar" />
-          <EntitySet Name="News" EntityType="Self.News" />
-          <EntitySet Name="Partners" EntityType="Self.Partner" />
-          <EntitySet Name="Sliders" EntityType="Self.Slider" />
-          <EntitySet Name="TopNavbars" EntityType="Self.TopNavbar" />
-          <EntitySet Name="Students" EntityType="CodeAcademyDbModel.Student" />
-          <EntitySet Name="GetFooterInfoes" EntityType="CodeAcademyDbModel.GetFooterInfo" />
-          <EntitySet Name="FooterCategory1" EntityType="CodeAcademyDbModel.FooterCategory1" />
-          <EntitySet Name="FooterHeader1" EntityType="CodeAcademyDbModel.FooterHeader1" />
-          <EntitySet Name="sysdiagrams" EntityType="CodeAcademyDbModel.sysdiagram" />
-          <AssociationSet Name="FK__footerCat__Heade__114A936A1" Association="CodeAcademyDbModel.FK__footerCat__Heade__114A936A1">
-            <End Role="FooterHeader1" EntitySet="FooterHeader1" />
-            <End Role="FooterCategory1" EntitySet="FooterCategory1" />
-          </AssociationSet>
-          <EntitySet Name="MeetingsContents" EntityType="CodeAcademyDbModel.MeetingsContent" />
-          <EntitySet Name="MeetingsHeaders" EntityType="CodeAcademyDbModel.MeetingsHeader" />
-          <EntitySet Name="MeetingsImages" EntityType="CodeAcademyDbModel.MeetingsImage" />
-          <EntitySet Name="Contacts" EntityType="CodeAcademyDbModel.Contact" />
-        </EntityContainer>
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="Id" />
@@ -308,93 +310,45 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
             <PropertyRef Name="WorkAddress" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Header" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Imagepath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Content" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="WorkAddress" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Imagepath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WorkAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="GetFooterInfo">
-          <Key>
-            <PropertyRef Name="Text" />
-            <PropertyRef Name="Expr1" />
-          </Key>
-          <Property Name="Text" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="FooterCategory1">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Text" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="HeaderId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="FooterHeader" Relationship="CodeAcademyDbModel.FK__footerCat__Heade__114A936A1" FromRole="FooterCategory1" ToRole="FooterHeader1" />
-        </EntityType>
-        <EntityType Name="FooterHeader1">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="text" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="FooterCategories" Relationship="CodeAcademyDbModel.FK__footerCat__Heade__114A936A1" FromRole="FooterHeader1" ToRole="FooterCategory1" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK__footerCat__Heade__114A936A1">
-          <End Type="CodeAcademyDbModel.FooterHeader1" Role="FooterHeader1" Multiplicity="1" />
-          <End Type="CodeAcademyDbModel.FooterCategory1" Role="FooterCategory1" Multiplicity="*" />
+        <Association Name="FK__footerCat__Heade__114A936A">
+          <End Role="FooterHeader" Type="Self.FooterHeader" Multiplicity="1" />
+          <End Role="FooterCategories" Type="Self.FooterCategory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="FooterHeader1">
+            <Principal Role="FooterHeader">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="FooterCategory1">
+            <Dependent Role="FooterCategories">
               <PropertyRef Name="HeaderId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="MeetingsContent">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Surname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="MeetingsHeader">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstPart" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SecondPart" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="MeetingsImage">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Contact">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Tel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mob" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Header" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
+        <EntityContainer Name="CodeAcademyDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AboutUs" EntityType="Self.AboutU" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="EducationProgramms" EntityType="Self.EducationProgramm" />
+          <EntitySet Name="Features" EntityType="Self.Feature" />
+          <EntitySet Name="FooterCategories" EntityType="Self.FooterCategory" />
+          <EntitySet Name="FooterHeaders" EntityType="Self.FooterHeader" />
+          <EntitySet Name="MeetingsContents" EntityType="Self.MeetingsContent" />
+          <EntitySet Name="MeetingsHeaders" EntityType="Self.MeetingsHeader" />
+          <EntitySet Name="MeetingsImages" EntityType="Self.MeetingsImage" />
+          <EntitySet Name="Navbars" EntityType="Self.Navbar" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="Partners" EntityType="Self.Partner" />
+          <EntitySet Name="Sliders" EntityType="Self.Slider" />
+          <EntitySet Name="TopNavbars" EntityType="Self.TopNavbar" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <AssociationSet Name="FK__footerCat__Heade__114A936A" Association="Self.FK__footerCat__Heade__114A936A">
+            <End Role="FooterHeader" EntitySet="FooterHeaders" />
+            <End Role="FooterCategories" EntitySet="FooterCategories" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -413,22 +367,77 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Mob" ColumnName="Mob" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="EducationProgramms">
             <EntityTypeMapping TypeName="CodeAcademyDbModel.EducationProgramm">
               <MappingFragment StoreEntitySet="EducationProgramms">
-                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
                 <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Features">
             <EntityTypeMapping TypeName="CodeAcademyDbModel.Feature">
               <MappingFragment StoreEntitySet="Features">
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FooterCategories">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.FooterCategory">
+              <MappingFragment StoreEntitySet="FooterCategories">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FooterHeaders">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.FooterHeader">
+              <MappingFragment StoreEntitySet="FooterHeader">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeetingsContents">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.MeetingsContent">
+              <MappingFragment StoreEntitySet="MeetingsContent">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeetingsHeaders">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.MeetingsHeader">
+              <MappingFragment StoreEntitySet="MeetingsHeader">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FirstPart" ColumnName="FirstPart" />
+                <ScalarProperty Name="SecondPart" ColumnName="SecondPart" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeetingsImages">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.MeetingsImage">
+              <MappingFragment StoreEntitySet="MeetingsImage">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -477,86 +486,12 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.GetFooterInfo' does not have a p
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="CodeAcademyDbModel.Student">
               <MappingFragment StoreEntitySet="Students">
-                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Header" ColumnName="Header" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="GetFooterInfoes">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.GetFooterInfo">
-              <MappingFragment StoreEntitySet="GetFooterInfo">
-                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FooterCategory1">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.FooterCategory1">
-              <MappingFragment StoreEntitySet="FooterCategories">
-                <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FooterHeader1">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.FooterHeader1">
-              <MappingFragment StoreEntitySet="FooterHeader">
-                <ScalarProperty Name="text" ColumnName="text" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MeetingsContents">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.MeetingsContent">
-              <MappingFragment StoreEntitySet="MeetingsContent">
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MeetingsHeaders">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.MeetingsHeader">
-              <MappingFragment StoreEntitySet="MeetingsHeader">
-                <ScalarProperty Name="SecondPart" ColumnName="SecondPart" />
-                <ScalarProperty Name="FirstPart" ColumnName="FirstPart" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MeetingsImages">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.MeetingsImage">
-              <MappingFragment StoreEntitySet="MeetingsImage">
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Contacts">
-            <EntityTypeMapping TypeName="CodeAcademyDbModel.Contact">
-              <MappingFragment StoreEntitySet="Contacts">
                 <ScalarProperty Name="Header" ColumnName="Header" />
-                <ScalarProperty Name="Mob" ColumnName="Mob" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

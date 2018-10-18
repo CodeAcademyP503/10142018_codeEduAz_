@@ -26,21 +26,19 @@ namespace CodeAcademySite.Models
         }
     
         public virtual DbSet<AboutU> AboutUs { get; set; }
+        public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<EducationProgramm> EducationProgramms { get; set; }
         public virtual DbSet<Feature> Features { get; set; }
+        public virtual DbSet<FooterCategory> FooterCategories { get; set; }
+        public virtual DbSet<FooterHeader> FooterHeaders { get; set; }
+        public virtual DbSet<MeetingsContent> MeetingsContents { get; set; }
+        public virtual DbSet<MeetingsHeader> MeetingsHeaders { get; set; }
+        public virtual DbSet<MeetingsImage> MeetingsImages { get; set; }
         public virtual DbSet<Navbar> Navbars { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<Partner> Partners { get; set; }
         public virtual DbSet<Slider> Sliders { get; set; }
         public virtual DbSet<TopNavbar> TopNavbars { get; set; }
         public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<GetFooterInfo> GetFooterInfoes { get; set; }
-        public virtual DbSet<FooterCategory1> FooterCategory1 { get; set; }
-        public virtual DbSet<FooterHeader1> FooterHeader1 { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<MeetingsContent> MeetingsContents { get; set; }
-        public virtual DbSet<MeetingsHeader> MeetingsHeaders { get; set; }
-        public virtual DbSet<MeetingsImage> MeetingsImages { get; set; }
-        public virtual DbSet<Contact> Contacts { get; set; }
     }
 }

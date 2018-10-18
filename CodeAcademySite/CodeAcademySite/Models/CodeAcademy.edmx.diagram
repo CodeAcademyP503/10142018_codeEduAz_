@@ -4,25 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ed1e7bec3d554c1fbcaddcaf80856444" Name="Diagram1">
-        <EntityTypeShape EntityType="CodeAcademyDbModel.AboutU" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.EducationProgramm" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.Feature" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.Navbar" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.News" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.Partner" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.Slider" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.TopNavbar" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.Student" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.GetFooterInfo" Width="1.5" PointX="9.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.FooterCategory1" Width="1.5" PointX="3" PointY="9.875" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.FooterHeader1" Width="1.5" PointX="0.75" PointY="10" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.sysdiagram" Width="1.5" PointX="5.75" PointY="9.75" />
-        <AssociationConnector Association="CodeAcademyDbModel.FK__footerCat__Heade__114A936A1" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.MeetingsContent" Width="1.5" PointX="7.375" PointY="6.75" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.MeetingsHeader" Width="1.5" PointX="9.375" PointY="3.75" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.MeetingsImage" Width="1.5" PointX="9.375" PointY="6.75" />
-        <EntityTypeShape EntityType="CodeAcademyDbModel.Contact" Width="1.5" PointX="8.375" PointY="9.75" />
+      <Diagram DiagramId="7127db92e4f94ee9be8936f4bea00c33" Name="Diagram1">
+        <EntityTypeShape EntityType="CodeAcademyDbModel.AboutU" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.Contact" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.EducationProgramm" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.Feature" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.FooterCategory" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.FooterHeader" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.MeetingsContent" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.MeetingsHeader" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.MeetingsImage" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.Navbar" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.News" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.Partner" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.Slider" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.TopNavbar" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.Student" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CodeAcademyDbModel.FK__footerCat__Heade__114A936A" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

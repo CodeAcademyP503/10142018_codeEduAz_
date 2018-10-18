@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,24 +12,24 @@ namespace CodeAcademySite.Controllers
     {
         // GET: Home
         public CodeAcademyDbEntities db = new CodeAcademyDbEntities();
-        public ActionResult Index()
-        {
-            ViewBag.topNavbars = db.TopNavbars.ToList();
-            ViewBag.navbars = db.Navbars.ToList();
-            ViewBag.sliders = db.Sliders.ToList();
-            ViewBag.news = db.News.ToList();
-            ViewBag.features = db.Features.ToList();
-            ViewBag.programms = db.EducationProgramms.ToList();
-            ViewBag.aboutus = db.AboutUs.ToList();
-            ViewBag.meetingsimage = db.MeetingsImages.ToList();
-            ViewBag.meetingsimage = db.MeetingsImages.ToList();
-            ViewBag.meetingscontent = db.MeetingsContents.ToList();
-            ViewBag.meetingsheader = db.MeetingsHeaders.ToList();
-            ViewBag.students = db.Students.ToList();
-            ViewBag.partners = db.Partners.ToList();
-            ViewBag.footerheader = db.FooterHeader1.ToList();
 
-            ViewBag.Data = db.Contacts.ToList();
+        public async Task<ActionResult> Index()
+        {
+            ViewBag.topNavbars = await db.TopNavbars.ToListAsync();
+            ViewBag.navbars = await db.Navbars.ToListAsync();
+            ViewBag.sliders = await db.Sliders.ToListAsync();
+            ViewBag.news = await db.News.ToListAsync();
+            ViewBag.features = await db.Features.ToListAsync();
+            ViewBag.programms = await db.EducationProgramms.ToListAsync();
+            ViewBag.aboutus = await db.AboutUs.ToListAsync();
+            ViewBag.meetingsimage = await db.MeetingsImages.ToListAsync();
+            ViewBag.meetingsimage = await db.MeetingsImages.ToListAsync();
+            ViewBag.meetingscontent = await db.MeetingsContents.ToListAsync();
+            ViewBag.meetingsheader = await db.MeetingsHeaders.ToListAsync();
+            ViewBag.students = await db.Students.ToListAsync();
+            ViewBag.partners = await db.Partners.ToListAsync();
+            ViewBag.footerheader = await db.FooterHeaders.ToListAsync();
+            ViewBag.Data = await db.Contacts.ToListAsync();
             return View();
         }
     }
