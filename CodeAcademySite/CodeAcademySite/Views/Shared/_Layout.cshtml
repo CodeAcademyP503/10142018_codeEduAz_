@@ -1,4 +1,6 @@
 ﻿@using CodeAcademySite.Models
+@*@using CodeAcademySite.Controllers;
+@model IEnumerable<CodeAcademySite.Models.FooterViewModel>*@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,15 +80,15 @@
                     <ul>
                         @foreach (Navbar item in ViewBag.navbars)
                         {
-                        <li class='dropdown'>
-                            <a class="dropdown-trigger">
-                               @item.MenuItem
-                                <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
-                            </a>
-                        </li>
+                            <li class='dropdown'>
+                                <a class="dropdown-trigger">
+                                    @item.MenuItem
+                                    <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                                </a>
+                            </li>
                         }
-                        
-                       
+
+
                     </ul>
                 </div>
                 <div class="search-bar align-right">
@@ -117,63 +119,40 @@
                 <div class="row">
                     <div class="col-md-9">
                         <ul class="links flexbox between">
-                            <li>
-                                <h3>AKADEMİYA</h3>
-                                <ul>
-                                    <li><a href="/academy/haqqimizda">Haqqımızda</a></li>
-                                    <li><a href="/academy/idare-heyeti">İdarə Heyəti</a></li>
-                                    <li><a href="/academy/muellimlerimiz">M&#252;əllimlərimiz</a></li>
-                                    <li><a href="/academy/akademik-partnyorlar">Akademik Partnyorlar</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>DƏRSLƏR</h3>
-                                <ul>
-                                    <li><a href="/education/qrafik-ve-veb-dizayn">Qrafik və Veb Dizayn</a></li>
-                                    <li><a href="/education/digital-marketing">Digital Marketing</a></li>
-                                    <li><a href="/education/proqramlasdirma">Proqramlaşdırma</a></li>
-                                    <li><a href="/education/sistem-administratorlugu">Sistem  Administratorluğu</a></li>
-                                    <li><a href="/education/ms-office">MS Office</a></li>
-                                    <li><a href="/education/3d-modellesdirme-ve-vizualizasiya">3D Modelləşdirmə və Vizualizasiya</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>TƏHSİL MODELİ</h3>
-                                <ul>
-                                    <li><a href="/education/zemanetli_tehsil">Zəmanətli təhsil</a></li>
-                                    <li><a href="/education/tehsil-modeli">Təhsil Modeli</a></li>
-                                    <li><a href="/education/mentor_sistemi">Mentor sistemi</a></li>
-                                    <li><a href="/education/beynalxalq_sertifkasiya">Beynəlxalq sertifikasiya</a></li>
-                                    <li><a href="/education/karyera-merkezi">Karyera mərkəzi</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>TƏQVİM</h3>
-                                <ul>
-                                    <li><a href="/events/infosessiyalar">İnfosessiyalar</a></li>
-                                    <li><a href="/events/gizlilik_siyaseti">Gizlilik Siyasəti</a></li>
-                                </ul>
-                            </li>
+
+                            @foreach (var item in ViewBag.footerheader)
+                            {
+                                <li>
+                                    <h3>@item.text</h3>
+                                    <ul>
+                                        @foreach (var sub_item in item.FooterCategories)
+                                        {
+                                            <li><a href="/academy/haqqimizda">@sub_item.Text</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
                         </ul>
                     </div>
-                    <div class="col-md-3">
-                        <div class="contact-details align-right">
-                            <h3>ƏLAQƏ</h3>
-                            <address>Nizami küçesi 203B, AF Business House, 2-ci mərtəbə</address><a href="tel:+994125552525" class="phone">Tel: +99412 555 2525</a>
-                            <p>
-                                Mobil: <a href="tel:+994504442633">+99450 444 2633</a>
-                                <br>Whatsapp: <a href="tel:+994504442633">+99450 444 2633</a>
-                            </p>
-                            <ul class="social-networks flexbox between">
-                                <li><a target="_blank" href="https://www.facebook.com/code.edu.az"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
-                                <li><a target="_blank" href="https://twitter.com/Code_edu_az"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a target="_blank" href="https://www.instagram.com/code.edu.az/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a target="_blank" href="https://www.linkedin.com/company/code.edu.az"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-
-
-                            </ul>
+                    @foreach (var item in ViewBag.Data)
+                    {
+                        <div class="col-md-3">
+                            <div class="contact-details align-right">
+                                <h3>@item.Header</h3>
+                                <address>@item.Address</address><a href="tel:+994125552525" class="phone">@item.Tel</a>
+                                <p>
+                                    Mobil: <a href="tel:+994504442633">@item.Mob</a>
+                                    <br>Whatsapp: <a href="tel:+994504442633">@item.Mob</a>
+                                </p>
+                                <ul class="social-networks flexbox between">
+                                    <li><a target="_blank" href="https://www.facebook.com/code.edu.az"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+                                    <li><a target="_blank" href="https://twitter.com/Code_edu_az"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a target="_blank" href="https://www.instagram.com/code.edu.az/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a target="_blank" href="https://www.linkedin.com/company/code.edu.az"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

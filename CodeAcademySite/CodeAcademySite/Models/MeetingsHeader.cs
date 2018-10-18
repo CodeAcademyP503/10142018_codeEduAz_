@@ -12,11 +12,10 @@ namespace CodeAcademySite.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class EducationProgramm
+    public partial class MeetingsHeader
     {
-        public int Id { get; set; }
-        public string Imagepath { get; set; }
-        public string Info { get; set; }
-        public string ClassName { get; set; }
+        public int id { get; set; }
+        public string FirstPart { get; set; }
+        public string SecondPart { get; set; }
     }
 }

@@ -12,11 +12,9 @@ namespace CodeAcademySite.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class EducationProgramm
+    public partial class GetFooterInfo
     {
-        public int Id { get; set; }
-        public string Imagepath { get; set; }
-        public string Info { get; set; }
-        public string ClassName { get; set; }
+        public string Text { get; set; }
+        public string Expr1 { get; set; }
     }
 }

@@ -12,11 +12,13 @@ namespace CodeAcademySite.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class EducationProgramm
+    public partial class Student
     {
         public int Id { get; set; }
+        public string Header { get; set; }
+        public string FullName { get; set; }
         public string Imagepath { get; set; }
-        public string Info { get; set; }
-        public string ClassName { get; set; }
+        public string Content { get; set; }
+        public string WorkAddress { get; set; }
     }
 }

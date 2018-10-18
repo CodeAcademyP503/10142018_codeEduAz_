@@ -12,12 +12,9 @@ namespace CodeAcademySite.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Connection
+    public partial class MeetingsImage
     {
-        public int Id { get; set; }
-        public string Address { get; set; }
-        public string HomePhone { get; set; }
-        public string Mobile { get; set; }
-        public string WhatsApp { get; set; }
+        public int id { get; set; }
+        public string ImagePath { get; set; }
     }
 }
