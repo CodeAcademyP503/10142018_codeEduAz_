@@ -40,5 +40,7 @@ namespace CodeAcademySite.Models
         public virtual DbSet<Slider> Sliders { get; set; }
         public virtual DbSet<TopNavbar> TopNavbars { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<AdminPanel> AdminPanels { get; set; }
+        public virtual DbSet<NavbarsItem> NavbarsItems { get; set; }
     }
 }

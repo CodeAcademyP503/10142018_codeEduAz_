@@ -1,0 +1,26 @@
+﻿@using CodeAcademySite.Models
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="row" style="margin-left: 50px; margin-top: 50px;">
+        <div class="col-md-12">
+            <h2>Update</h2>
+        </div>
+        <div class="col-md-12">
+            <form action="@Url.Action("update","topnavbar")" method="post">
+                <div class="form-group">
+                    <label>Info</label>
+
+                    <input style="width:100%;" type="text" name="Info" value="@ViewBag.TopNavbar.Info" />
+
+
+                </div>
+                <button class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+

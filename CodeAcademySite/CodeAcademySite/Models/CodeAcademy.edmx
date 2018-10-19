@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CodeAcademyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CodeAcademyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AboutUs">
           <Key>
             <PropertyRef Name="Id" />
@@ -15,6 +15,14 @@
           <Property Name="Imagepath" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Content" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="WorkAddress" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdminPanel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Contacts">
           <Key>
@@ -89,6 +97,14 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MenuItem" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="NavbarsItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="NavbarId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="News">
           <Key>
             <PropertyRef Name="Id" />
@@ -149,8 +165,21 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.Students' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NavbarsItems_Navbars">
+          <End Role="Navbars" Type="Self.Navbars" Multiplicity="1" />
+          <End Role="NavbarsItems" Type="Self.NavbarsItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Navbars">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NavbarsItems">
+              <PropertyRef Name="NavbarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="CodeAcademyDbModelStoreContainer">
           <EntitySet Name="AboutUs" EntityType="Self.AboutUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminPanel" EntityType="Self.AdminPanel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EducationProgramms" EntityType="Self.EducationProgramms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Features" EntityType="Self.Features" Schema="dbo" store:Type="Tables" />
@@ -160,6 +189,7 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.Students' does not have a primar
           <EntitySet Name="MeetingsHeader" EntityType="Self.MeetingsHeader" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MeetingsImage" EntityType="Self.MeetingsImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Navbars" EntityType="Self.Navbars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NavbarsItems" EntityType="Self.NavbarsItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
@@ -178,9 +208,12 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.Students' does not have a primar
             <End Role="FooterHeader" EntitySet="FooterHeader" />
             <End Role="FooterCategories" EntitySet="FooterCategories" />
           </AssociationSet>
+          <AssociationSet Name="FK_NavbarsItems_Navbars" Association="Self.FK_NavbarsItems_Navbars">
+            <End Role="Navbars" EntitySet="Navbars" />
+            <End Role="NavbarsItems" EntitySet="NavbarsItems" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CodeAcademyDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -269,6 +302,7 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.Students' does not have a primar
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MenuItem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NavbarsItems" Relationship="CodeAcademyDbModel.FK_NavbarsItems_Navbars" FromRole="Navbar" ToRole="NavbarsItem" />
         </EntityType>
         <EntityType Name="News">
           <Key>
@@ -348,7 +382,42 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.Students' does not have a primar
             <End Role="FooterHeader" EntitySet="FooterHeaders" />
             <End Role="FooterCategories" EntitySet="FooterCategories" />
           </AssociationSet>
+          <EntitySet Name="AdminPanels" EntityType="CodeAcademyDbModel.AdminPanel" />
+          <EntitySet Name="NavbarsItems" EntityType="CodeAcademyDbModel.NavbarsItem" />
+          <AssociationSet Name="FK_NavbarsItems_Navbars" Association="CodeAcademyDbModel.FK_NavbarsItems_Navbars">
+            <End Role="Navbar" EntitySet="Navbars" />
+            <End Role="NavbarsItem" EntitySet="NavbarsItems" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="AdminPanel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NavbarsItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NavbarId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Navbar" Relationship="CodeAcademyDbModel.FK_NavbarsItems_Navbars" FromRole="NavbarsItem" ToRole="Navbar" />
+        </EntityType>
+        <Association Name="FK_NavbarsItems_Navbars">
+          <End Type="CodeAcademyDbModel.Navbar" Role="Navbar" Multiplicity="1" />
+          <End Type="CodeAcademyDbModel.NavbarsItem" Role="NavbarsItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Navbar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NavbarsItem">
+              <PropertyRef Name="NavbarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -492,6 +561,24 @@ warning 6002: The table/view 'CodeAcademyDb.dbo.Students' does not have a primar
                 <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminPanels">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.AdminPanel">
+              <MappingFragment StoreEntitySet="AdminPanel">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NavbarsItems">
+            <EntityTypeMapping TypeName="CodeAcademyDbModel.NavbarsItem">
+              <MappingFragment StoreEntitySet="NavbarsItems">
+                <ScalarProperty Name="NavbarId" ColumnName="NavbarId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -30,6 +30,8 @@ namespace CodeAcademySite.Controllers
             ViewBag.partners = await db.Partners.ToListAsync();
             ViewBag.footerheader = await db.FooterHeaders.ToListAsync();
             ViewBag.Data = await db.Contacts.ToListAsync();
+            ViewBag.navbarsItems = await db.NavbarsItems.ToListAsync();
+
             return View();
         }
     }

@@ -21,6 +21,9 @@
         <EntityTypeShape EntityType="CodeAcademyDbModel.TopNavbar" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CodeAcademyDbModel.Student" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="CodeAcademyDbModel.FK__footerCat__Heade__114A936A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.AdminPanel" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CodeAcademyDbModel.NavbarsItem" Width="1.5" PointX="6" PointY="8.875" />
+        <AssociationConnector Association="CodeAcademyDbModel.FK_NavbarsItems_Navbars" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

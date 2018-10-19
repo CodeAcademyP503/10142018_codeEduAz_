@@ -14,7 +14,16 @@ namespace CodeAcademySite.Models
     
     public partial class Navbar
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Navbar()
+        {
+            this.NavbarsItems = new HashSet<NavbarsItem>();
+        }
+    
         public int Id { get; set; }
         public string MenuItem { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NavbarsItem> NavbarsItems { get; set; }
     }
 }

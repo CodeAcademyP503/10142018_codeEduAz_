@@ -80,11 +80,25 @@
                     <ul>
                         @foreach (Navbar item in ViewBag.navbars)
                         {
-                            <li class='dropdown'>
-                                <a class="dropdown-trigger">
-                                    @item.MenuItem
-                                    <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
-                                </a>
+                        <li class='dropdown'>
+                            <a class="dropdown-trigger">
+                                @item.MenuItem
+                                <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                            </a>
+
+                            @foreach (NavbarsItem subitem in item.NavbarsItems)
+                            {
+                                <ul class="dropdown-content">
+                                    <div class="dropdown-frame wo-title">
+                                        <ul>
+                                            @foreach (NavbarsItem subitemin in item.NavbarsItems)
+                                            {
+                                                <li><a href="/academy/haqqimizda">"@subitemin.Name"</a></li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </ul>
+                            }
                             </li>
                         }
 
@@ -103,8 +117,7 @@
                     </form>
                 </div>
                 <div class="apply ">
-
-                    <button onclick="window.location.href='/appeal/muraciet'" type="button" class="button-style button-blue">Müraciət et</button>
+                    <a href="@Url.Action("login","home",new { Area = "admin"})"><button "type=" button" class="button-style button-blue">Login</button></a>
                 </div>
             </div>
         </nav>

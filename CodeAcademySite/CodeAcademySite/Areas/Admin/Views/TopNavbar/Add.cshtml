@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="row" style="margin-left: 50px; margin-top: 50px;">
+    <div class="col-md-12">
+        <h2>Add</h2>
+    </div>
+    <div class="col-md-12">
+        <form action="@Url.Action("add","topnavbar")" method="post">
+            <div class="form-group">
+                <label>Info</label>
+                <input type="text" name="Info" value=""/>
+            </div>
+            <button class="btn btn-success">Save</button>
+        </form>
+    </div>
+</div>
+
