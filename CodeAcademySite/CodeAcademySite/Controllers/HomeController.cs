@@ -27,7 +27,6 @@ namespace CodeAcademySite.Controllers
             ViewBag.students = db.Students.ToList();
             ViewBag.partners = db.Partners.ToList();
             ViewBag.footerheader = db.FooterHeader1.ToList();
-
             ViewBag.Data = db.Contacts.ToList();
             return View();
         }
